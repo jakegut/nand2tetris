@@ -12,3 +12,22 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+    @listen
+    0;JMP
+(fill)
+    @SCREEN
+    M=-1
+    @listen
+    0;JMP
+(blank)
+    @SCREEN
+    M=0
+    @listen
+    0;JMP
+(listen)
+    @KBD
+    D=M
+    @blank
+    D;JEQ
+    @fill 
+    D;JNE
